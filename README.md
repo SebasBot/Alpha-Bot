@@ -1,3 +1,5 @@
 # Alpha-Bot
-Es un bot de Discord.js v13, nada fuera de lo normal.
-Solo tiene fines de educación y entretenimiento.
+Es un bot de Discord, nada fuera de lo normal.
+Hecho en JavaScript basico y con Discord.js v.13
+Solo tiene fines educativos y entretenimiento.
+Estoy en discord como @SebasBot#4584
