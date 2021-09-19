@@ -1,0 +1,118 @@
+{
+    "Categoria":{ 
+        "color":"0xFFFFFF",
+        "author":{
+            "name":"Ayuda de Alpha-Bot",
+            "icon_url":"https://image.shutterstock.com/z/stock-vector--d-render-of-a-penguin-wearing-a-gold-crown-1137665684.jpg"
+        },
+        "description":"Seleccione una de las Siguientes categorias de comandos",
+        "image": {
+            "url": "https://thumbs.dreamstime.com/z/d-penguin-chatting-mobile-phone-render-using-46594129.jpg"
+        }        
+    },
+ "Seccion":{
+        "Seccion1":{
+            "color":"0xFF0000",
+            "author":{
+                "name":"Ayuda de Alpha-Bot",
+                "icon_url":"https://image.shutterstock.com/z/stock-vector--d-render-of-a-penguin-wearing-a-gold-crown-1137665684.jpg"
+            },
+            "description":"Seleccionaste Diversion",
+            "fields": [
+                {
+                    "name": "Comandos disponibles",
+                    "value": "say, slap"
+                }
+            ],
+            "image": {
+                "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
+            },
+            "footer":{
+                "text":"por ahora la ayuda no es interactiva :/"
+            }
+        },
+        "Seccion2":{
+            "color":"0xFFFF00",
+            "author":{
+                "name":"Ayuda de Alpha-Bot",
+                "icon_url":"https://image.shutterstock.com/z/stock-vector--d-render-of-a-penguin-wearing-a-gold-crown-1137665684.jpg"
+            },
+            "description":"Seleccionaste Informacion",
+            "fields": [
+                {
+                    "name": "Comandos disponibles",
+                    "value": "help, ping"
+                }
+            ],
+            "image": {
+                "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
+            },
+            "footer":{
+                "text":"por ahora la ayuda no es interactiva :/"
+            }
+        },
+        "Seccion3":{
+            "color":"0xFF00FF",
+            "author":{
+                "name":"Ayuda de Alpha-Bot",
+                "icon_url":"https://image.shutterstock.com/z/stock-vector--d-render-of-a-penguin-wearing-a-gold-crown-1137665684.jpg"
+            },
+            "description":"Seleccionaste Moderacion",
+            "fields": [
+                {
+                    "name": "Comandos disponibles",
+                    "value": "kick, ban"
+                }
+            ],
+            "image": {
+                "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
+            },
+            "footer":{
+                "text":"por ahora la ayuda no es interactiva :/"
+            }
+        },
+        "Seccion4":{
+            "color":"0x00FFFF",
+            "author":{
+                "name":"Ayuda de Alpha-Bot",
+                "icon_url":"https://image.shutterstock.com/z/stock-vector--d-render-of-a-penguin-wearing-a-gold-crown-1137665684.jpg"
+            },
+            "description":"Seleccionaste Utilidades",
+            "fields": [
+                {
+                    "name": "Comandos disponibles",
+                    "value": "avatar, test, pregunta"
+                }
+            ],
+            "image": {
+                "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
+            },
+            "footer":{
+                "text":"por ahora la ayuda no es interactiva :/"
+            }
+        }
+    },
+
+    "Menu":{
+        "Var1":
+            {
+            "label": "Diversion",            
+                "value":"first"
+            },
+        "Var2":
+            { 
+            "label": "Informacion",
+                "value":"second"
+            },
+        "Var3":
+            {
+            "label": "Moderacion",
+                "value":"third"
+            },
+        "Var4":
+            { 
+            "label": "Utilidades",    
+                "value":"fourth"
+            }
+    }
+}

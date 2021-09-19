@@ -14,7 +14,7 @@ const ComandosSlash = fs.readdirSync('./ComandosSlash')
         }
     }
 
-    console.log(client.Slashcommands)
+   // console.log(client.Slashcommands)
 
 client.once('ready', () => {
     console.log('Alpha Bot v1.1 esta listo')
@@ -24,18 +24,21 @@ client.once('ready', () => {
 
 
 client.on('messageCreate', message =>{
-    console.log(message.mentions.users)
+    //console.log(message)
     if(message.content=='<@!854753076664729600>'){
         message.reply('Mi nombre es Alpha-Bot, estoy aqui para servirte')
     }
-   
     
+    if(message.content=='embed'){
+        
+    }
+
 })
 
 client.on('interactionCreate',async interaccion=>{
     if (!interaccion.isCommand()) return;
     const slashName = client.Slashcommands.get(interaccion.commandName);
-    console.log(slashName)
+    //console.log(slashName)
     if(!slashName) return
     try{
         await slashName.execute(interaccion)
@@ -44,7 +47,8 @@ client.on('interactionCreate',async interaccion=>{
         console.log(error)
         return interaccion.reply({content: 'Algo salio mal', ephemeral: true})
     }
-
+    //console.log(interaccion.isSelectMenu())
+    //console.log(interaccion)    
 })   
 
 client.login(process.env.TOKEN)
