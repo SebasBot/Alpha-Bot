@@ -20,7 +20,7 @@
             "description":"Seleccionaste Diversion",
             "fields": [
                 {
-                    "name": "Comandos disponibles",
+                    "name": "Comandos disponibles:",
                     "value": "say, slap"
                 }
             ],
@@ -28,7 +28,7 @@
                 "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
             },
             "footer":{
-                "text":"por ahora la ayuda no es interactiva :/"
+                "text":"Por ahora la ayuda no es interactiva :/"
             }
         },
         "Seccion2":{
@@ -40,7 +40,7 @@
             "description":"Seleccionaste Informacion",
             "fields": [
                 {
-                    "name": "Comandos disponibles",
+                    "name": "Comandos disponibles:",
                     "value": "help, ping"
                 }
             ],
@@ -48,7 +48,7 @@
                 "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
             },
             "footer":{
-                "text":"por ahora la ayuda no es interactiva :/"
+                "text":"Por ahora la ayuda no es interactiva :/"
             }
         },
         "Seccion3":{
@@ -60,7 +60,7 @@
             "description":"Seleccionaste Moderacion",
             "fields": [
                 {
-                    "name": "Comandos disponibles",
+                    "name": "Comandos disponibles:",
                     "value": "kick, ban"
                 }
             ],
@@ -68,7 +68,7 @@
                 "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
             },
             "footer":{
-                "text":"por ahora la ayuda no es interactiva :/"
+                "text":"Por ahora la ayuda no es interactiva :/"
             }
         },
         "Seccion4":{
@@ -80,7 +80,7 @@
             "description":"Seleccionaste Utilidades",
             "fields": [
                 {
-                    "name": "Comandos disponibles",
+                    "name": "Comandos disponibles:",
                     "value": "avatar, test, pregunta"
                 }
             ],
@@ -88,7 +88,7 @@
                 "url": "https://media.istockphoto.com/photos/3d-academic-penguin-looks-through-a-magnifying-glass-picture-id523828725?k=6&m=523828725&s=170667a&w=0&h=Ot3CPlL5QgTCH5fVI7q6MraoyYHOUtQueVj-qYnSlkU="
             },
             "footer":{
-                "text":"por ahora la ayuda no es interactiva :/"
+                "text":"Por ahora la ayuda no es interactiva :/"
             }
         }
     },

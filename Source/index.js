@@ -28,7 +28,8 @@ client.on('messageCreate', message =>{
     if(message.content=='<@!854753076664729600>'){
         message.reply('Mi nombre es Alpha-Bot, estoy aqui para servirte')
     }
-})
+}
+)
 
 client.on('interactionCreate',async interaccion=>{
     if (!interaccion.isCommand()) return;
@@ -42,6 +43,7 @@ client.on('interactionCreate',async interaccion=>{
         console.log(error)
         return interaccion.reply({content: 'Algo salio mal', ephemeral: true})
     }
+
     //console.log(interaccion)    
 })   
 

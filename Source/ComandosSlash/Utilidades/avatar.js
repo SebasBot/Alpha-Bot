@@ -13,7 +13,6 @@ module.exports = {
             .setTitle(`Avatar de ${usuario.username}:`)
             .setImage(usuario.displayAvatarURL({size: 4096,dynamic: true, format: 'png'}))
 		    .setColor('BLACK');
-            console.log(Peticion)
     await interaccion.reply({embeds: [Peticion]});
         
 	}
