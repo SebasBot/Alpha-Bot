@@ -27,7 +27,7 @@ module.exports = {
 Collector.on('collect', async i =>{
 	if(i.customId==='primary'){
 	await i.deferUpdate();
-	await i.editReply ({ content: 'PONG! Has presionado el boton!', components: [] })
+	await i.editReply ({ content: `PONG! Has presionado el boton! `, components: [] })
 	Collector.stop()
 	}
 })
