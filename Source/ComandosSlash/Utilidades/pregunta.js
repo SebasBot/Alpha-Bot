@@ -11,7 +11,7 @@ module.exports = {
 
     async execute(interaccion){
         var pregunta = interaccion.options.getString('interrogante')
-        const respuestas = ['Si.', 'No.', 'Nunca.', 'Definitivamente.', 'Mejor pregunta otra cosa.']
+        const respuestas = ['Si. 👍', 'No. 👎', 'Es posible. 🤔', 'Nunca. 😄', 'Definitivamente. 👌', 'Mejor pregunta otra cosa. 😅']
         const RNG = Math.floor(Math.random() * respuestas.length)
         
         const Bola8 = new MessageEmbed() // create embed 

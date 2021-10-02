@@ -12,7 +12,7 @@ module.exports = {
             const Peticion = new MessageEmbed()
             .setTitle(`Avatar de ${usuario.username}:`)
             .setImage(usuario.displayAvatarURL({size: 4096,dynamic: true, format: 'png'}))
-		    .setColor('BLACK');
+		    .setColor('RANDOM');
     await interaccion.reply({embeds: [Peticion]});
         
 	}
