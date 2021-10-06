@@ -1,6 +1,7 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
 
 module.exports = {
+    name: "banear",
     data: new SlashCommandBuilder()
         .setName('banear')
         .setDescription('Veta a un usuario temporal o indefinidamente')

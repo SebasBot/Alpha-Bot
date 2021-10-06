@@ -3,6 +3,7 @@ const { MessageActionRow, MessageButton, Collector } = require('discord.js');
 
 
 module.exports = {
+	name: "ping",
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Responde con un pong'),

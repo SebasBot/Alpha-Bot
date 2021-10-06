@@ -1,6 +1,7 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
 const {MessageEmbed}=require('discord.js')
 module.exports = {
+    name: "pregunta",
     data: new SlashCommandBuilder()
         .setName('pregunta')
         .setDescription('Responderé a una de tus preguntas')

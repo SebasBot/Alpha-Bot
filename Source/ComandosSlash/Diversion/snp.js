@@ -1,6 +1,7 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
 const {snp} = require('../../index.ts')
 module.exports = {
+    name: "snp",
     data: new SlashCommandBuilder()
         .setName('snp')
         .setDescription('Obtengo el mensaje borrado')

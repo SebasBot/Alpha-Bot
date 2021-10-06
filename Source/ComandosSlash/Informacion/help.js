@@ -4,6 +4,7 @@ const { MessageActionRow, MessageSelectMenu, Options, SelectMenuInteraction } = 
 const { Categoria, Seccion, Menu } = require('./help.json')
 
 module.exports = {
+   name: "help",
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('Otorga una lista de comandos disponibles'),  

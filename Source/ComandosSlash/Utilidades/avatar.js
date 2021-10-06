@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
+    name: "avatar",
 	data: new SlashCommandBuilder()
 		.setName('avatar')
 		.setDescription('Solicita un avatar')

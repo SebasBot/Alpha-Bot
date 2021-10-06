@@ -6,7 +6,7 @@ module.exports = (cliente, Discord) =>{
         const ArchivoSlash = fs.readdirSync(`./ComandosSlash/${carpetaSlash}/`).filter(file => file.endsWith('.js'))
         for (const Doc of ArchivoSlash){
             const Slashcommand = require(`../ComandosSlash/${carpetaSlash}/${Doc}`)
-            cliente.Slashcommands.set(Slashcommand.data.name, Slashcommand)
+            cliente.Slashcommands.set(Slashcommand.name, Slashcommand)
         }
     }
 }
