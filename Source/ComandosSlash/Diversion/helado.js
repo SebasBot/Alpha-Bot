@@ -2,23 +2,23 @@ const {SlashCommandBuilder} = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('slap')
-        .setDescription('¡Abofetea a tus amigos!')
+        .setName('helado')
+        .setDescription('¡Ofrece un helado!')
         .addUserOption(option => 
             option.setName('usuario').
-            setDescription('El objetivo ')
+            setDescription('El convidado')
             .setRequired(true)
             ),
     async execute(interaccion){
         const receptor = interaccion.options.getUser('usuario')
-        const agresor  = interaccion.member.user.username
+        const emisor  = interaccion.member.user.username
         var Objeto = { 
             color:"RANDOM",
             author:{
-                name:`${agresor} ha abofeteado a ${receptor.username}`
+                name:`¡${emisor} ha dado helado a ${receptor.username}! `
             },
             image: {
-                url: "https://c.tenor.com/k4_iBaFWIAYAAAAC/slapping.gif"
+                url: "https://c.tenor.com/YazlxXEYNnEAAAAd/pico-boku-no-pico.gif"
             }        
         }
 

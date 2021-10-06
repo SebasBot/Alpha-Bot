@@ -27,7 +27,8 @@ module.exports = {
 Collector.on('collect', async i =>{
 	if(i.customId==='primary'){
 	await i.deferUpdate();
-	await i.editReply ({ content: `PONG! Has presionado el boton! `, components: [] })
+	await i.editReply ({ content: `PONG! \n Latencia del API es de: ${interaccion.client.ws.ping}ms.`+ 
+	`\n Latencia del BOT es de: ${Date.now() - interaccion.createdTimestamp}ms`, components: [] })
 	Collector.stop()
 	}
 })

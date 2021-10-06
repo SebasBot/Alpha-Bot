@@ -2,7 +2,7 @@ const {SlashCommandBuilder} = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('ban')
+        .setName('banear')
         .setDescription('Veta a un usuario temporal o indefinidamente')
         .addUserOption(option => 
             option.setName('usuario').

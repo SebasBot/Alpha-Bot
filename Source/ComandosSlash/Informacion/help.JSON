@@ -21,7 +21,7 @@
             "fields": [
                 {
                     "name": "Comandos disponibles:",
-                    "value": "say, slap"
+                    "value": "decir, golpear, invitar"
                 }
             ],
             "image": {
@@ -61,7 +61,7 @@
             "fields": [
                 {
                     "name": "Comandos disponibles:",
-                    "value": "kick, ban"
+                    "value": "expulsar, mejorar(uso limitado), vetar "
                 }
             ],
             "image": {

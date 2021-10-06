@@ -19,8 +19,8 @@ const Rest = new REST({version: '9'}).setToken(process.env.TOKEN);
 (async() => {
     try{
         await Rest.put(
-            //Routes.applicationGuildCommands(process.env.CLIENTID,process.env.GUILDID),
-            Routes.applicationCommands(process.env.CLIENTID),
+            Routes.applicationGuildCommands(process.env.CLIENTID,process.env.GUILDID),
+            //Routes.applicationCommands(process.env.CLIENTID),
             {body: slashcommands});
             console.log('Comandos creados Exitosamente');
         

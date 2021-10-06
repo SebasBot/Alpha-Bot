@@ -2,7 +2,7 @@ const {SlashCommandBuilder} = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('kick')
+        .setName('expulsar')
         .setDescription('Expulsa a un miembro de manera rapida')
         .addUserOption(option=> 
             option.setName('objetivo')
@@ -13,6 +13,6 @@ module.exports = {
         const objetivo = interaccion.options.getUser('objetivo')
 //fetch user and kik
 
-        await interaccion.reply(`Has expulsado a ${objetivo}`)
+        await interaccion.reply(`Has expulsado a ${objetivo}... ES BAIT jijijija`)
     }
 }
