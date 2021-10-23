@@ -10,7 +10,7 @@ module.exports = {
             setDescription('El convidado')
             .setRequired(true)
             ),
-    async execute(interaccion){
+    async execute(Discord, cliente, interaccion){
         const receptor = interaccion.options.getUser('usuario')
         const emisor  = interaccion.member.user.username
         var Objeto = { 

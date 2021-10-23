@@ -10,7 +10,7 @@ module.exports = {
             .setDescription('la interrogante que desees consultar')
             .setRequired(true)),
 
-    async execute(interaccion){
+    async execute(Discord, cliente, interaccion){
         var pregunta = interaccion.options.getString('interrogante')
         const respuestas = ['Si. 👍', 'No. 👎', 'Es posible. 🤔', 'Nunca. 😄', 'Definitivamente. 👌', 'Mejor pregunta otra cosa. 😅']
         const RNG = Math.floor(Math.random() * respuestas.length)

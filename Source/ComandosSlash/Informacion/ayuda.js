@@ -4,11 +4,11 @@ const { MessageActionRow, MessageSelectMenu, Options, SelectMenuInteraction } = 
 const { Categoria, Seccion, Menu } = require('./help.json')
 
 module.exports = {
-    name: "help",
+   name: "ayuda",
     data: new SlashCommandBuilder()
-        .setName('help')
+        .setName('ayuda')
         .setDescription('Otorga una lista de comandos disponibles'),  
-    async execute(interaccion){
+    async execute(Discord, cliente, interaccion){
             const lista = new MessageActionRow()
             .addComponents(
                 new MessageSelectMenu()

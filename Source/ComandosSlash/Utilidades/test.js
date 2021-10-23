@@ -5,7 +5,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('test')
         .setDescription('Pruebas de slash commands'),  
-    async execute(interaccion){
+    async execute(Discord, cliente, interaccion){
         await interaccion.reply(`no hay tests`)
     }
 }

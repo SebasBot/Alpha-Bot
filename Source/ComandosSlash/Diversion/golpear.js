@@ -10,7 +10,7 @@ module.exports = {
             setDescription('El objetivo ')
             .setRequired(true)
             ),
-    async execute(interaccion){
+    async execute(Discord, cliente, interaccion){
         const receptor = interaccion.options.getUser('usuario')
         const agresor  = interaccion.member.user.username
         var Objeto = { 

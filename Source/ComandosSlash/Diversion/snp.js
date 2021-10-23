@@ -1,5 +1,6 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
-const {snp} = require('../../index.ts')
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
     name: "snp",
     data: new SlashCommandBuilder()
@@ -9,23 +10,35 @@ module.exports = {
             option.setName('modo')
             .setDescription('True: eliminado, False: Editado')
             .setRequired(true)),
-    async execute(interaccion){
-        var Opcion = interaccion.options.getBoolean('modo')
-       var snptrue = 0
+    async execute(Discord, cliente, interaccion){
+        const snptrue = cliente.Snipes.get(interaccion.channel.id)
+        const snpfalse = cliente.EditSnipes.get(interaccion.channel.id)
+        const Opcion = interaccion.options.getBoolean('modo')
+       
         Opcion ? await interaccion.reply(
             snptrue
 				? {
-						embeds: [
-							new MessageEmbed()
-								.setDescription(snp.content)
-								.setAuthor(snp.author.tag)
-								.setTimestamp(snp.createdAt),
-						],
+					embeds: [
+						new MessageEmbed()
+							.addField('Mensaje Borrado',snptrue.Contenido,true)
+							.setAuthor(snptrue.Usuario, snptrue.PerfilURL)
+							.setColor('BLACK')
+							.setTimestamp(snptrue.Fecha),
+					],
 				  }
-				: "¡No hay nada eliminado recientemente!"
-
-
-        )
-        : await interaccion.reply('no hay todavia')
+				: "¡No hay nada eliminado recientemente!" )
+        : await interaccion.reply(
+         snpfalse 
+                ? {
+                    embeds: [
+                        new MessageEmbed()
+                        
+                        .addField('Mensaje Editado',snpfalse.Anterior_Mensaje,true)
+                        .setAuthor(snpfalse.Usuario, snpfalse.PerfilURL)
+                        .setColor('WHITE')
+                        .setTimestamp(snpfalse.Fecha)
+                    ]
+                  }
+                :"¡No hay nada editado recientemente")
     }
 }

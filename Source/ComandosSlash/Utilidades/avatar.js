@@ -8,7 +8,7 @@ module.exports = {
 		.setDescription('Solicita un avatar')
         .addUserOption(option => 
             option.setName('objetivo').setDescription('El avatar del usuario en cuestión')),
-	async execute(interaccion) {       
+	async execute(Discord, cliente, interaccion) {       
          var usuario = interaccion.options.getUser('objetivo') || interaccion.member.user;
             const Peticion = new MessageEmbed()
             .setTitle(`Avatar de ${usuario.username}:`)
