@@ -8,7 +8,7 @@ const slashFiles = fs.readdirSync('./ComandosSlash')
 
 
  for(const carpetaSlash of slashFiles){
-     const ArchivoSlash = fs.readdirSync(`./ComandosSlash/${carpetaSlash}`).filter(file => file.endsWith('.js'))
+     const ArchivoSlash = fs.readdirSync(`./ComandosSlash/${carpetaSlash}/`).filter(file => file.endsWith('.js'))
      for(const Doc of ArchivoSlash){
          const Slash = require(`./ComandosSlash/${carpetaSlash}/${Doc}`)
          slashcommands.push(Slash.data.toJSON())
@@ -19,8 +19,8 @@ const Rest = new REST({version: '9'}).setToken(process.env.TOKEN);
 (async() => {
     try{
         await Rest.put(
-            //Routes.applicationGuildCommands(process.env.CLIENTID,process.env.GUILDID),
-            Routes.applicationCommands(process.env.CLIENTID),
+            Routes.applicationGuildCommands(process.env.CLIENTID,process.env.GUILDID),
+            //Routes.applicationCommands(process.env.CLIENTID),
             {body: slashcommands});
             console.log('Comandos creados Exitosamente');
         

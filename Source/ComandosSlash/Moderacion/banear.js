@@ -20,7 +20,7 @@ module.exports = {
                 setDescription('La causa del ban')
                 .setRequired(false)
                 ),
-    async execute(interaccion){
+    async execute(Discord, cliente, interaccion){
       
       
         const usuario = interaccion.options.getUser('usuario');
