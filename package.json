@@ -2,7 +2,7 @@
   "name": "bot-1.1",
   "version": "1.0.0",
   "description": "Un bot de discord",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

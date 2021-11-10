@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
-	name: "ping",
+	name: "latencia",
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Responde con un pong'),
