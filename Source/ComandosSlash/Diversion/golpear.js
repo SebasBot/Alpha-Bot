@@ -16,7 +16,7 @@ module.exports = {
         var Objeto = { 
             color:"RANDOM",
             author:{
-                name:`${agresor} ha abofeteado a ${receptor.username}`
+                name:`${agresor} ha abofeteado a ${receptor.username} 🖐️💫`
             },
             image: {
                 url: "https://c.tenor.com/k4_iBaFWIAYAAAAC/slapping.gif"

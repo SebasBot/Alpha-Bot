@@ -1,25 +1,25 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
 
 module.exports = {
-    name: "helado",
+    name: "besar",
     data: new SlashCommandBuilder()
-        .setName('helado')
-        .setDescription('¡Ofrece un helado!')
+        .setName('besar')
+        .setDescription('Das un besito ¡Que tierno!')
         .addUserOption(option => 
             option.setName('usuario').
-            setDescription('El convidado')
+            setDescription('El afortunado')
             .setRequired(true)
             ),
     async execute(Discord, cliente, interaccion){
         const receptor = interaccion.options.getUser('usuario')
-        const emisor  = interaccion.member.user.username
+        const afortunado  = interaccion.member.user.username
         var Objeto = { 
             color:"RANDOM",
             author:{
-                name:`¡${emisor} ha dado helado a ${receptor.username}! 🍦 🚙`
+                name:`${afortunado} le ha dado un besito a ${receptor.username} 😘`
             },
             image: {
-                url: "https://c.tenor.com/YazlxXEYNnEAAAAd/pico-boku-no-pico.gif"
+                url: "https://media.giphy.com/media/v4JbTGe4KJjKo/giphy.gif"
             }        
         }
 

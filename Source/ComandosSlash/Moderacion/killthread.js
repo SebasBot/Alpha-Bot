@@ -59,12 +59,10 @@ module.exports = {
         Collector.on('collect', async collctd =>{
             try{
                 await collctd.deferUpdate();
+                console.log(`${Target.name} esta siendo admitido para ser eliminado`)
                 switch(collctd.customId){
                 case 'approve':  //si presiona "si"
-                    console.log(`${Target.name} admitido para ser eliminado`)
-
                         Target.delete('Eliminado por Author o Moderador')
-                        
                         //Despues...
                         .then(()=>{
 
@@ -75,14 +73,11 @@ module.exports = {
                             
                             collctd.editReply({content:'Ha ocurrido un error en el proceso', embeds:[], components: []});
                             console.log(err)
-
-                        
                         })
 
                     Collector.stop()
                     break;
                 case 'deny':
-                        console.log(`${Target.name} no fue admitido para ser eliminado`)
                         collctd.editReply({content:'Te recomiendo que no lo hagas de nuevo', embeds:[], components:[]});
                     break;
 
@@ -90,7 +85,8 @@ module.exports = {
 
             }catch(error){
             console.log(error); 
-            interaccion.channel.send({content: 'Ocurrio un error'})}
+            console.log('Ha ocurrido un error')
+            }
 
 
         })
