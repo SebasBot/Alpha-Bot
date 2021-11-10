@@ -11,6 +11,7 @@ module.exports = {
         var respuesta = interaccion.options.getString('frase')
         if(respuesta.includes('discord.gg') || respuesta.includes('https://')) {
             return await interaccion.reply('*No deberias poner links y/o invitaciones en la frase*')}
+        
         await interaccion.reply(respuesta)
     }
 }

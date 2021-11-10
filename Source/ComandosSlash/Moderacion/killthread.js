@@ -12,7 +12,6 @@ module.exports = {
             .setRequired(false)
         ),
     async execute(Discord, cliente, interaccion){
-
         var Thread = interaccion.options.getString('id') || interaccion.channel.id
         var Target = interaccion.guild.channels.cache.get(Thread)
 
@@ -25,18 +24,16 @@ module.exports = {
             if(!interaccion.memberPermissions.has('MANAGE_THREADS')) return interaccion.reply('No puedes eliminar este hilo')
         }
 
-
         const Objeto = {
             color:"BLACK",
             author:{
-                name:`Eliminar Hilo`
-            },
+                name:`Eliminar Hilo`},
             fields :[
                 {
                   name: `¿Estas Estas seguro de eliminar el hilo ${Target.name}?`,
                   value: `Pertenece al canal ${Parent.name}`
                 }
-              ],
+            ],
         }
 
         const Botones = new MessageActionRow()
@@ -61,31 +58,37 @@ module.exports = {
 
         Collector.on('collect', async collctd =>{
             try{
-            await collctd.deferUpdate();
-            switch(collctd.customId){
-                case 'approve':
+                await collctd.deferUpdate();
+                switch(collctd.customId){
+                case 'approve':  //si presiona "si"
                     console.log(`${Target.name} admitido para ser eliminado`)
-                    Target.delete('Eliminado por Author o Moderador')
+
+                        Target.delete('Eliminado por Author o Moderador')
+                        
+                        //Despues...
                         .then(()=>{
+
                             Parent.send(`El hilo \'${Target.name}\' ha sido eliminado, tengan un buen dia`)
-                            collctd.editReply({content:'Hilo Eliminado, te recomiendo que no lo hagas de nuevo', embeds:[], components:[]
-                            })
                             console.log(`HILO \'${Target.name}\' FUE ELIMINADO`)
+
                         }).catch(err=>{
-                        collctd.editReply({content:'Ha ocurrido un error en el proceso', embeds:[], components: []});
-                        console.log(err)
-                        Collector.stop()
+                            
+                            collctd.editReply({content:'Ha ocurrido un error en el proceso', embeds:[], components: []});
+                            console.log(err)
+
+                        
                         })
-            
+
+                    Collector.stop()
                     break;
                 case 'deny':
                         console.log(`${Target.name} no fue admitido para ser eliminado`)
                         collctd.editReply({content:'Te recomiendo que no lo hagas de nuevo', embeds:[], components:[]});
                     break;
-            }
 
-        }
-        catch(error){
+                }
+
+            }catch(error){
             console.log(error); 
             interaccion.channel.send({content: 'Ocurrio un error'})}
 
@@ -93,7 +96,5 @@ module.exports = {
         })
 
     }
-
-
 
 }

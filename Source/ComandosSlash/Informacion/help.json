@@ -5,7 +5,7 @@
             "name":"Ayuda de Alpha-Bot",
             "icon_url":"https://image.shutterstock.com/z/stock-vector--d-render-of-a-penguin-wearing-a-gold-crown-1137665684.jpg"
         },
-        "description":"Seleccione una de las Siguientes categorias de comandos",
+        "description" : "Seleccione una de las Siguientes categorias de comandos",
         "image": {
             "url": "https://thumbs.dreamstime.com/z/d-penguin-chatting-mobile-phone-render-using-46594129.jpg"
         }        

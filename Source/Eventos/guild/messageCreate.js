@@ -1,5 +1,4 @@
 module.exports=(Discord, cliente, message) => {
-    
     const MsgCreated = {
         Usuario: message.author.username + ' #' + message.author.discriminator,
         ID: message.author.id,
@@ -8,6 +7,8 @@ module.exports=(Discord, cliente, message) => {
         Server: message.guild.name
     }
 
+
+    
     console.log('-----------Mensaje Enviado-----------')
     console.log(MsgCreated)
     console.log('--------------------------------------')

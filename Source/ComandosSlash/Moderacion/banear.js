@@ -21,7 +21,6 @@ module.exports = {
                 .setRequired(false)
                 ),
     async execute(Discord, cliente, interaccion){
-      
         if(!interaccion.memberPermissions.has('BAN_MEMBERS')) return interaccion.reply('No puedes BANEAR a ningun usuario, fuera de mi vista')
         
         const usuario = interaccion.options.getUser('usuario');
@@ -30,17 +29,12 @@ module.exports = {
         if(!tiempo){tiempo = 3}; if(!razon){razon = 'Ningun motivo aparente.'}
         if(!interaccion.user) return interaccion.reply('No posees ')
         let Target = interaccion.guild.members.cache.get(usuario.id)
-
-
-        
         Target.ban({days: tiempo, reason: razon})
         .then(()=>{interaccion.reply(
             `Has baneado a ${usuario.username} durante ${tiempo} dias, Motivo: ${razon}` )})
             .catch(err => {
                 interaccion.reply(`No pude banear a ${usuario.username}, simplemente algo salio mal`)
                 console.log(err) } )
-
-        
-        
+       
     }
 }

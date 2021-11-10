@@ -6,14 +6,13 @@ const dotenv = require('dotenv'); dotenv.config()
 const slashcommands = []
 const slashFiles = fs.readdirSync('./ComandosSlash')
 
-
- for(const carpetaSlash of slashFiles){
-     const ArchivoSlash = fs.readdirSync(`./ComandosSlash/${carpetaSlash}/`).filter(file => file.endsWith('.js'))
-     for(const Doc of ArchivoSlash){
-         const Slash = require(`./ComandosSlash/${carpetaSlash}/${Doc}`)
-         slashcommands.push(Slash.data.toJSON())
-     }
- }
+for(const carpetaSlash of slashFiles){
+    const ArchivoSlash = fs.readdirSync(`./ComandosSlash/${carpetaSlash}/`).filter(file => file.endsWith('.js'))
+    for(const Doc of ArchivoSlash){
+        const Slash = require(`./ComandosSlash/${carpetaSlash}/${Doc}`)
+        slashcommands.push(Slash.data.toJSON())
+    }
+}
 const Rest = new REST({version: '9'}).setToken(process.env.TOKEN);
 
 (async() => {

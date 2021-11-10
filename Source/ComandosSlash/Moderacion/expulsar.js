@@ -11,8 +11,8 @@ module.exports = {
             .setRequired(true)
             ),  
     async execute(Discord, cliente ,interaccion){
-
         if(!interaccion.memberPermissions.has('KICK_MEMBERS')) return interaccion.reply('No puedes EXPULSAR a ningun usuario, fuera de mi vista')
+        
         const objetivo = interaccion.options.getUser('objetivo')
         let Target = interaccion.guild.members.cache.get(objetivo.id)
         Target.kick('Fue expulsado por un Moderador')

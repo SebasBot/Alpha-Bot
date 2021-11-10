@@ -1,17 +1,16 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
+
 module.exports={
     name: "invitar",
     data: new SlashCommandBuilder()
-    .setName('invitar')
-    .setDescription('Manda una invitacion del bot'),
+        .setName('invitar')
+        .setDescription('Manda una invitacion del bot'),
     async execute(Discord, cliente, interaccion){
         const nickname  = interaccion.member.user.username
-
         const objeto = {
             color:"RANDOM",
             author:{
-                name:`Ola ${nickname} ¿Por que no me añades a tu server?`
-            },
+                name:`Ola ${nickname} ¿Por que no me añades a tu server?` },
             fields :[
               {
                 name: "Esta es la URL/invitacion",
@@ -27,6 +26,5 @@ module.exports={
             }   
         }
         await interaccion.reply({embeds: [objeto], ephemeral: true}) 
-
     }
 }
