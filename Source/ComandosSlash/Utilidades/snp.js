@@ -5,10 +5,10 @@ module.exports = {
     name: "snp",
     data: new SlashCommandBuilder()
         .setName('snp')
-        .setDescription('Obtengo el mensaje borrado')
+        .setDescription('Envio un mensaje editado o eliminado')
         .addBooleanOption(option => 
             option.setName('modo')
-            .setDescription('True: eliminado, False: Editado')
+            .setDescription('True: Eliminado, False: Editado')
             .setRequired(true)),
     async execute(Discord, cliente, interaccion){
       const snptrue = cliente.Snipes.get(interaccion.channel.id)

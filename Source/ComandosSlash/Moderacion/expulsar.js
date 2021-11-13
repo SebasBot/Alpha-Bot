@@ -17,9 +17,9 @@ module.exports = {
         let Target = interaccion.guild.members.cache.get(objetivo.id)
         Target.kick('Fue expulsado por un Moderador')
             .then(()=>{
-                 interaccion.reply(`Has expulsado a ${objetivo.name}...`)
+                 interaccion.reply(`Has expulsado a ${Target.name}...`)
             }).catch(err=>{
-                 interaccion.reply(`No pude expulsar a ${objetivo.name}, simplemente algo salio mal`)
+                 interaccion.reply(`No pude expulsar a ${Target.name}, simplemente algo salio mal`)
             })
 
         
