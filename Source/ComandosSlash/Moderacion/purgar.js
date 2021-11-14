@@ -12,7 +12,7 @@ module.exports={
             ),
     async execute(cliente, Discord, interaccion){
         var cantidad = interaccion.options.getInteger('cantidad')
-        if(cantidad>1000) return interaccion.reply('No puedes eliminar más de 1000 mensajes')
+        if(cantidad>100) return interaccion.reply('No puedes eliminar más de 100 mensajes')
 
         if(!interaccion.memberPermissions.has('MANAGE_MESSAGES')) return interaccion.reply('No tienes permiso de purgar mensajes')
         
@@ -22,7 +22,8 @@ module.exports={
                 interaccion.reply(`Se han eliminado ${mensajes.size} mensaje(s) 🧻`)
             })
             .catch(err=>{
-                interaccion.reply(`No se ha podido eliminar mensajes, es probable que los mensajes sean muy antiguos`)
+                console.log(err)
+                interaccion.reply(`No se pudo eliminar esa cantidad de mensajes, lo siento.`)
             })
 
 

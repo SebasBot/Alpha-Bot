@@ -22,7 +22,8 @@ module.exports = {
 			Collector.on('collect', async i =>{
 			if(i.customId==='primary'){
 			await i.deferUpdate();
-			await i.editReply ({ content: 'Vale, siempre estoy a tu servicio 👍', components: [] })
+			await i.editReply({components:[]})
+			await i.followUp({ content: 'Vale, siempre estoy a tu servicio 👍' , ephemeral: true})
 			Collector.stop()
 			}
 		})

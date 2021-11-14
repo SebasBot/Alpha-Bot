@@ -27,7 +27,8 @@ module.exports = {
         var tiempo = interaccion.options.getNumber('tiempo')
         var razon = interaccion.options.getString('razon')
         if(!tiempo){tiempo = 3}; if(!razon){razon = 'Ningun motivo aparente.'}
-        if(!interaccion.user) return interaccion.reply('No posees ')
+        
+        
         let Target = interaccion.guild.members.cache.get(usuario.id)
         Target.ban({days: tiempo, reason: razon})
         .then(()=>{interaccion.reply(
