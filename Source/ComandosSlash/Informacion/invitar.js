@@ -14,11 +14,11 @@ module.exports={
             fields :[
               {
                 name: "Esta es la URL/invitacion",
-                value:"https://discord.com/api/oauth2/authorize?client_id=854753076664729600&permissions=8&scope=bot%20applications.commands"
+                value:"https://discord.com/api/oauth2/authorize?client_id=854753076664729600&permissions=545460846583&scope=bot%20applications.commands"
               },
               {
               name:"Este es mi server, si deseas aportar algo al bot",
-              value:"https://discord.gg/jPgszbRzX5"
+              value:"https://discord.gg/JW6BkxaFtu"
                }
             ],
             image: {
