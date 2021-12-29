@@ -19,11 +19,11 @@ module.exports={
         await interaccion.channel.bulkDelete(cantidad, true)
             .then(mensajes=>{
                 console.log(mensajes)
-                interaccion.reply(`Se han eliminado ${mensajes.size} mensaje(s) 🧻`)
+                interaccion.reply({content: `Se han eliminado ${mensajes.size} mensaje(s) 🧻`, ephemeral: true })
             })
             .catch(err=>{
                 console.log(err)
-                interaccion.reply(`No se pudo eliminar esa cantidad de mensajes, lo siento.`)
+                interaccion.reply({content: `No se pudo eliminar esa cantidad de mensajes, lo siento.`, ephemeral: true})
             })
 
 

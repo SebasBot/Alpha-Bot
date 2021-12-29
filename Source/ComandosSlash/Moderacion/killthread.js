@@ -30,7 +30,7 @@ module.exports = {
                 name:`Eliminar Hilo`},
             fields :[
                 {
-                  name: `¿Estas Estas seguro de eliminar el hilo ${Target.name}?`,
+                  name: `¿Estas seguro de eliminar el hilo ${Target.name}?`,
                   value: `Pertenece al canal ${Parent.name}`
                 }
             ],

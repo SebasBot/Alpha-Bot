@@ -27,3 +27,5 @@ const Rest = new REST({version: '9'}).setToken(process.env.TOKEN);
         console.log(error)
     }
 })();
+
+

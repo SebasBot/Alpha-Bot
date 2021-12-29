@@ -13,6 +13,8 @@ module.exports = {
     async execute(Discord, cliente, interaccion){
         const receptor = interaccion.options.getUser('usuario')
         const agresor  = interaccion.member.user.username
+
+        
         var Objeto = { 
             color:"RANDOM",
             author:{
@@ -23,6 +25,10 @@ module.exports = {
             }        
         }
 
+        if(agresor==receptor.username){
+            Objeto.footer = {
+                text: 'El tipo esta golpeando la causa de sus problemas'}
+        }
 
         await interaccion.reply({embeds: [Objeto]})
     }

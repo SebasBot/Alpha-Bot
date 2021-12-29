@@ -6,16 +6,16 @@ module.exports = {
         .setName('banear')
         .setDescription('Veta a un usuario temporal o indefinidamente')
         .addUserOption(option => 
-            option.setName('usuario').
-            setDescription('El objetivo ')
+            option.setName('usuario')
+            .setDescription('El objetivo ')
             .setRequired(true)
             )
-            .addNumberOption(option => 
+        .addNumberOption(option => 
                 option.setName('tiempo').
                 setDescription('El tiempo de la penalización (en dias)')
                 .setRequired(false)
             )
-            .addStringOption(option => 
+        .addStringOption(option => 
                 option.setName('razon').
                 setDescription('La causa del ban')
                 .setRequired(false)
@@ -30,11 +30,11 @@ module.exports = {
         
         
         let Target = interaccion.guild.members.cache.get(usuario.id)
-        Target.ban({days: tiempo, reason: razon})
+        await Target.ban({days: tiempo, reason: razon})
         .then(()=>{interaccion.reply(
-            `Has baneado a ${usuario.username} durante ${tiempo} dias, Motivo: ${razon}` )})
+            `Has baneado a ${usuario.username} Motivo: ${razon}` )})
             .catch(err => {
-                interaccion.reply(`No pude banear a ${usuario.username}, simplemente algo salio mal`)
+                interaccion.reply({content:`No pude banear a ${usuario.username}, simplemente algo salio mal` , ephemeral: true })
                 console.log(err) } )
        
     }

@@ -13,6 +13,8 @@ module.exports = {
     async execute(Discord, cliente, interaccion){
         const receptor = interaccion.options.getUser('usuario')
         const emisor  = interaccion.member.user.username
+
+        if(emisor==receptor.username) return interaccion.reply('Uh...')
         var Objeto = { 
             color:"RANDOM",
             author:{

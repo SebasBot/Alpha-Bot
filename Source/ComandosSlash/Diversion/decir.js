@@ -9,23 +9,33 @@ module.exports = {
             option.setName('frase')
             .setDescription('Lo que dire por ti.')
             .setRequired(true))
-        .addBooleanOption(option =>
+        .addStringOption(option =>
             option.setName('tts')
             .setDescription('¿Lo digo en voz alta?')
             .setRequired(false)
+            .addChoice('Activado', 'tts-true')
             ),
     async execute(Discord, cliente, interaccion){
         var respuesta = interaccion.options.getString('frase')
-        var tts = interaccion.options.getBoolean('tts')
+        var tts = interaccion.options.getString('tts')
 
         
         if(respuesta.includes('discord.gg') || respuesta.includes('https://')) {
-            return await interaccion.reply('*No deberias poner links y/o invitaciones en la frase*')}
-        
-        if(tts){
-            return interaccion.reply({ content: respuesta, tts: true })
+            return interaccion.reply({content:'**No deberias poner links y/o invitaciones en la frase**', ephemeral: true})
+        }
+        if(respuesta.includes('@everyone')){
+            return interaccion.reply({content:'**Ahhh ¿Te querias pasar de listo poniendo everyone?**', ephemeral: true}) 
+        }
+        if(respuesta.length >= 50){
+            return interaccion.reply({content:'**Te pasaste el limite de 50 caracteres, Ojo ahi**', ephemeral: true})
+        }
+        if(tts == 'tts-true'){
+            
+            interaccion.reply({content:'El mensaje que has enviado con el locutor es:', ephemeral: true})
+            await interaccion.channel.send({ content: respuesta, tts: true })
         }else{
-            return interaccion.reply({ content: respuesta })
+            interaccion.reply({content:'El mensaje que has enviado es:', ephemeral: true})
+            await interaccion.channel.send({ content: respuesta })
         }
 
     }

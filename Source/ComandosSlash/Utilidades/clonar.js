@@ -70,7 +70,6 @@ module.exports={
                 }
             }catch(err){
                 console.log(err)
-                console.log('algo simplemente salio mal')
             }
 
 

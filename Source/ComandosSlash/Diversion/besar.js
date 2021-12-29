@@ -13,6 +13,9 @@ module.exports = {
     async execute(Discord, cliente, interaccion){
         const receptor = interaccion.options.getUser('usuario')
         const afortunado  = interaccion.member.user.username
+
+        if(receptor.username == afortunado) return interaccion.reply('¿Te puedes besar a ti mismo? WTF')
+        
         var Objeto = { 
             color:"RANDOM",
             author:{
