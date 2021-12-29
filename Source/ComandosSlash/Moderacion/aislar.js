@@ -23,8 +23,9 @@ module.exports = {
         ),
 
     async execute(Discord, cliente, interaccion){
-        if(!interaccion.memberPermissions.has('TIMEOUT_MEMBERS')) return interaccion.reply('No puedes AISLAR a ningun usuario, fuera de mi vista')
-
+        if(!interaccion.memberPermissions.has('MODERATE_MEMBERS')){
+            return interaccion.reply('No puedes AISLAR a ningun usuario, fuera de mi vista')}
+            
         const usuario = interaccion.options.getUser('usuario')
         var Tiempo = interaccion.options.getNumber('tiempo')
         var Razon = interaccion.options.getString('razon')
