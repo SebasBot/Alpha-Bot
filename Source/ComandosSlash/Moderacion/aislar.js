@@ -127,28 +127,5 @@ module.exports = {
         
         })
 
-
-       
-        /*
-
-
-        /aislar 
-        usuario: [miembro mencionable]  
-        tiempo: [0 o cualquier numero positivo] 
-        razon: [nula o string promedio]
-        
-        si Tiempo es 0, entonces advertir al usuario sobre 
-        nulificar aislamiento
-        si no, avisar al usuario el tiempo del usuario aislado
-
-        de todos modos, ejecutar metodo de aislamiento
-
-
-        
-        */ 
-
-
-
     }
-
 }
