@@ -23,10 +23,10 @@ module.exports = {
         if(respuesta.includes('discord.gg') || respuesta.includes('https://')) {
             return interaccion.reply({content:'**No deberias poner links y/o invitaciones en la frase**', ephemeral: true})
         }
-        if(respuesta.includes('@everyone')){
+        if(respuesta.includes('@everyone')||respuesta.includes('@here')){
             return interaccion.reply({content:'**Ahhh ¿Te querias pasar de listo poniendo everyone?**', ephemeral: true}) 
         }
-        if(respuesta.length >= 50){
+        if(respuesta.length >= 100){
             return interaccion.reply({content:'**Te pasaste el limite de 50 caracteres, Ojo ahi**', ephemeral: true})
         }
         if(tts == 'tts-true'){

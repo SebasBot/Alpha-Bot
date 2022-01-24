@@ -10,7 +10,3 @@ module.exports = (cliente, Discord) =>{
         }
     }
 }
-
-
-/* const arreglo = fs.readdirSync('../ComandosSlash/')
-console.log(arreglo)     */
