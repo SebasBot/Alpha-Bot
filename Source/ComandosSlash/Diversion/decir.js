@@ -27,7 +27,7 @@ module.exports = {
             return interaccion.reply({content:'**Ahhh ¿Te querias pasar de listo poniendo everyone?**', ephemeral: true}) 
         }
         if(respuesta.length >= 100){
-            return interaccion.reply({content:'**Te pasaste el limite de 50 caracteres, Ojo ahi**', ephemeral: true})
+            return interaccion.reply({content:'**Te pasaste el limite de 100 caracteres, Ojo ahi**', ephemeral: true})
         }
         if(tts == 'tts-true'){
             

@@ -18,6 +18,7 @@ const Rest = new REST({version: '9'}).setToken(process.env.TOKEN);
 (async() => {
     try{
         await Rest.put(
+            //Cambiar si son comandos para un server o globales 
             //Routes.applicationGuildCommands(process.env.CLIENTID,process.env.GUILDID),
             Routes.applicationCommands(process.env.CLIENTID),
             {body: slashcommands});

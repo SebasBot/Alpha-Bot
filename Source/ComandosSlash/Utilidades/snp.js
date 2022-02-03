@@ -24,13 +24,13 @@ module.exports = {
               embeds:[ 
                 new MessageEmbed()
                   .addField('Mensaje Borrado', deleted_msg.Contenido, true)
-                  .setAuthor(deleted_msg.Usuario, deleted_msg.PerfilURL)
+                  .setAuthor({name: deleted_msg.Usuario, iconURL: deleted_msg.PerfilURL})
                   .setColor('NOT_QUITE_BLACK')
                   .setTimestamp(deleted_msg.Fecha)
                   .setImage(deleted_msg.Imagen)              
               ]
             }
-            :'No hay nada eliminado recientemente'
+            : 'No hay nada eliminado recientemente'
             )
           break;
         case 'edited':
@@ -40,7 +40,7 @@ module.exports = {
               embeds: [
                 new MessageEmbed()              
                   .addField('Mensaje Editado', edited_msg.Anterior_Mensaje,true)
-                  .setAuthor(edited_msg.Usuario, edited_msg.PerfilURL)
+                  .setAuthor({name: edited_msg.Usuario, iconURL: edited_msg.PerfilURL })
                   .setColor('WHITE')
                   .setTimestamp(edited_msg.Fecha)
                   .setImage(edited_msg.Imagen)

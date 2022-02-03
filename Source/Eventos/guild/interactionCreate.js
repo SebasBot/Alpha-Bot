@@ -6,7 +6,6 @@ module.exports = async (Discord, cliente, interaccion) => {
         await slashName.execute(Discord,cliente, interaccion)
     }
     catch(error){
-        console.log(error)
-        console.log('Algo salio mal')    
+        console.log(error)  
     }
 }

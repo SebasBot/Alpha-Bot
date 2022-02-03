@@ -1,6 +1,6 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
 
-const {gifs, frases} = require('../ArchivosJSON/cohetes.json')
+const {cohete_gifs, cohete_frases} = require('../ArchivosJSON/miscelany.json')
 
 module.exports = {
     name: "cohete",
@@ -12,12 +12,11 @@ module.exports = {
     
     async execute(Discord, cliente, interaccion){
      
-
         var Embed = {
             color: "RANDOM",
-            title: frases[Math.floor(Math.random()*frases.length)],
+            title: cohete_frases[Math.floor(Math.random()*cohete_frases.length)],
             image: {
-                url: gifs[Math.floor(Math.random()*gifs.length)]
+                url: cohete_gifs[Math.floor(Math.random()*cohete_gifs.length)]
             }
         }
 
