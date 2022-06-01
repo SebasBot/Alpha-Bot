@@ -27,15 +27,19 @@ from "fs"
             }
         )
         
+        //Colecciones
         BOT.SlhCommands = new Collection()
         BOT.Events = new Collection()
+        BOT.Edits = new Collection()
+        BOT.Deletes = new Collection()
+        BOT.Logs = new Collection()
 
-        const Managers = readdirSync('./Source/Managers/').filter(file => file.endsWith('.js'))
+        const Managers = readdirSync('./Source/Managers').filter(file => file.endsWith('.js'))
             for(const files of Managers)
             {   
                 try
                 {
-                    require(`./Managers/${files}`).default(BOT, Discord)
+                    require(`../Managers/${files}`).default(BOT, Discord)
                 }
                 catch(e)
                 {
@@ -46,6 +50,6 @@ from "fs"
         
 
         
-        await BOT.login(process.env.TOKEN)
+        await BOT.login(process.env.BOT_TOKEN)
     }
 )()

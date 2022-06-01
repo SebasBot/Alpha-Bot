@@ -2,12 +2,13 @@
   "name": "bot-1.1",
   "version": "1.0.0",
   "description": "Un bot de discord",
-  "main": "index.ts",
+  "module": "type",
+  "main": "./Source/Index/start.ts",
   "scripts": {
     "install": "npm install fs dotenv discord.js discord-api-types @discordjs/rest @discordjs/builders; npm install --save-dev typescript @types/node",
-    "config":"npm audit fix; npx tsc --init",
+    "config": "npm audit fix; npx tsc --init",
     "build": "tsc",
-    "start": "node -r dotenv/config ./Source/Index/start.js; node -r dotenv/config ./Source/Index/slashes.js"
+    "start": "node -r dotenv/config ./Source/Index/slashes.js; node -r dotenv/config ./Source/Index/start.js"
   },
   "author": "SebasBot",
   "license": "ISC",
@@ -20,7 +21,7 @@
     "fs": "^0.0.1-security"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "typescript": "^4.6.2"
+    "@types/node": "^17.0.23",
+    "typescript": "^4.6.3"
   }
 }
