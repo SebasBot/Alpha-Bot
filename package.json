@@ -4,7 +4,10 @@
   "description": "Un bot de discord",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "npm install fs dotenv discord.js discord-api-types @discordjs/rest @discordjs/builders; npm install --save-dev typescript @types/node",
+    "config":"npm audit fix; npx tsc --init",
+    "build": "tsc",
+    "start": "node -r dotenv/config ./Source/Index/start.js; node -r dotenv/config ./Source/Index/slashes.js"
   },
   "author": "SebasBot",
   "license": "ISC",
@@ -12,8 +15,12 @@
     "@discordjs/builders": "^0.6.0",
     "@discordjs/rest": "^0.1.0-canary.0",
     "discord-api-types": "^0.22.0",
-    "discord.js": "^13.4.0",
+    "discord.js": "^13.6.0",
     "dotenv": "^10.0.0",
     "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
   }
 }
