@@ -3,13 +3,30 @@ const {REST} = require('@discordjs/rest')
 const {Routes} = require('discord-api-types/v9')
 const dotenv = require('dotenv'); dotenv.config()
 
+
 const slashcommands = []
 const slashFiles = fs.readdirSync('./ComandosSlash')
 
+
+console.log(slashFiles)
+
+
 for(const carpetaSlash of slashFiles){
+
+    console.log(carpetaSlash)
     const ArchivoSlash = fs.readdirSync(`./ComandosSlash/${carpetaSlash}/`).filter(file => file.endsWith('.js'))
+    console.log(ArchivoSlash)
+
+
+
     for(const Doc of ArchivoSlash){
+
+
+        console.log(Doc)
         const Slash = require(`./ComandosSlash/${carpetaSlash}/${Doc}`)
+        console.log(Slash)
+        
+        
         slashcommands.push(Slash.data.toJSON())
     }
 }

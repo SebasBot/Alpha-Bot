@@ -1,4 +1,4 @@
-module.exports = async (Discord, cliente, msgDel) =>{
+https://www.twitch.tv/mantecafachamodule.exports = async (Discord, cliente, msgDel) =>{
   if(msgDel.author.bot) return
   const MsgDeleted = {
     Contenido: msgDel.content,
