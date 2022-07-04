@@ -9,7 +9,7 @@ export default (BOT:Client, Discord:any) => {
         {
             const EVENT = require(`../Events/${dirs}/${Doc}`);
             const EVENT_NAME = Doc.split('.')[0]
-            BOT.on(EVENT_NAME, EVENT.default.bind(null, Discord ,BOT))
+            BOT.on(EVENT_NAME, EVENT.default.bind(null, Discord, BOT))
         }
     }
 

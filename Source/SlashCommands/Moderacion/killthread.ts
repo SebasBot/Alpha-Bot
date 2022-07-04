@@ -13,22 +13,17 @@ export default {
         ),
 
     async execute(Discord:any, BOT:any, Interaction:BaseCommandInteraction)
-        {
-            var Thread = (Interaction.options as CommandInteractionOptionResolver)
-                .getString('Hilo') || Interaction.channel?.id
-
-            var Target = Interaction.guild?.channels.cache.get((Thread as string))
-
-            if(!Target) return Interaction.reply('No existe ningun hilo con este id => '+Thread)
-
-            var Parent = Interaction.guild?.channels.cache.get((Target.parentId as string))      
-
+    {
+        var Thread = (Interaction.options as CommandInteractionOptionResolver)
+            .getString('Hilo') || Interaction.channel?.id
+        var Target = Interaction.guild?.channels.cache.get((Thread as string))
+        if(!Target) return Interaction.reply('No existe ningun hilo con este id => '+Thread)
+        var Parent = Interaction.guild?.channels.cache.get((Target.parentId as string))      
         if(Target.type == 'GUILD_TEXT') return Interaction.reply('ESTE ES UN CANAL DE TEXTO')
-
-        if( (Target as ThreadChannel).ownerId != Interaction.member?.user.id ){
-            if(!Interaction.memberPermissions?.has('MANAGE_THREADS')) return Interaction.reply('No puedes eliminar este hilo')
+        if( (Target as ThreadChannel).ownerId != Interaction.member?.user.id )
+        {
+        if(!Interaction.memberPermissions?.has('MANAGE_THREADS')) return Interaction.reply('No puedes eliminar este hilo')
         }
-
         const Objeto = {
             color: 0xFFFFFF,
             author:{
@@ -68,17 +63,19 @@ export default {
                 )
                 Collector?.on('collect', async (collctd:ButtonInteraction) =>
                     {
-                        try{
-                            await collctd.deferUpdate();
+                            await collctd.deferUpdate().catch((e)=>
+                            {
+                                console.log(e); 
+                                console.log('Ha ocurrido un error')
+                            });
                             switch(collctd.customId){
                                 case 'approve':
                                     (Target as ThreadChannel).delete('Eliminado por Author o Moderador')
                                     //Despues...
                                     .then(()=>{
-                                    
                                         (Parent as TextChannel).send(`El hilo \'${Target?.name}\' ha sido eliminado, tengan un buen dia`)
-                                    
-                                    }).catch((err:Error)=>
+                                    })
+                                    .catch((err)=>
                                         {
                                         collctd.editReply(
                                             {
@@ -102,19 +99,13 @@ export default {
                                 break;
                             }
     
-                        }catch(error)
-                        {
-                            console.log(error); 
-                            console.log('Ha ocurrido un error')
-                        }
                     }
                 )
     
             }
-        ).catch((e:any)=>
+        ).catch((e)=>
             console.log(e)
         )
-
     }
 
 }

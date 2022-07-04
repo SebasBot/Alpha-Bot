@@ -19,7 +19,7 @@ for(const Folder of CommandFiles)
 const Rest = new REST({version: '9'})
     .setToken(process.env.BOT_TOKEN?process.env.BOT_TOKEN:'Error');
 
-(async()=>
+export default async function () 
 {
     try
     {
@@ -33,5 +33,5 @@ const Rest = new REST({version: '9'})
     {
         console.log(err)
     }
-}
-)();
+    
+} 
