@@ -9,10 +9,19 @@ Estoy en discord como @SebasBot#4584
 Clona este git e instala las biblitecas adecuadas
 
 En un archivo ".env" tienes que especificar:
- "TOKEN": 'Token del Bot'
- "GUILDID": 'Id de una guild'
- "CLIENTID": 'El id de tu Bot'
- "OWNERID": 'El Id de tu usuario'
- 
+
+ "TOKEN" = 'Token del Bot'
+
+ "GUILDID" = 'Id de una guild'
+
+ "CLIENTID" = 'El id de tu Bot'
+
+ "OWNERID" = 'El Id de tu usuario'
+
 y luego, personalizarlo a tu gusto. 
-### :D
+### Configurar el archivo de tsconfig a tu gusto
+Usaria estas 2 carpetas como entrada y salida:
+
+"rootDir": "./Source"
+
+"outDir": "./Compiled", 
