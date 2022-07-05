@@ -16,7 +16,7 @@ export default function(Discord:any, BOT:Client, message:Message)
                     message.stickers.first()?.url:
                     null,
         AutorID:  message.author.id,
-        Fecha: Date.now(),
+        Fecha: Date(),
     }
     console.log('-----------Mensaje Enviado-----------')
     console.log(MsgCreated)

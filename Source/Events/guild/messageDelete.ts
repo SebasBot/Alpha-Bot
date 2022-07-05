@@ -18,7 +18,7 @@ export default async function (Discord:any, BOT:any, msgDel:Message)
                 null,
     AutorID:   msgDel.author.id,
     CanalID:   msgDel.channel.id,
-    Fecha:     Date.now()
+    Fecha:     Date()
   }
   await BOT.Deletes.set(MsgDeleted.CanalID, MsgDeleted)
   console.log('----------Mensaje Eliminado-----------')

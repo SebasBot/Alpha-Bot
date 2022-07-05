@@ -22,7 +22,7 @@ export default async function (Discord:any, BOT:{[key:string]:any}, oldMsg:Messa
                             null,
         AutorID:          oldMsg.author.id,
         CanalID:          oldMsg.channel.id,
-        Fecha:            Date.now()
+        Fecha:            Date()
     }
     await BOT.Edits.set(MsgEdited.CanalID, MsgEdited)  
     console.log('-----------Mensaje Editado-----------')
