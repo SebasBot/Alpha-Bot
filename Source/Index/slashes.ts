@@ -3,7 +3,7 @@ import { readdirSync } from "fs"
 import { Routes } from "discord-api-types/v9";
 
 const Commands:String[] = []
-const Directory:string = './Source/SlashCommands'
+const Directory:string = './Compiled/SlashCommands'
 const CommandFiles = readdirSync(Directory)
 
 for(const Folder of CommandFiles)
@@ -21,17 +21,11 @@ const Rest = new REST({version: '9'})
 
 export default async function () 
 {
-    try
-    {
         await Rest.put(
             Routes.applicationCommands(process.env.CLIENTID as string),
             {body: Commands}
         )
-        console.log('Comandos Escritos Exitosamente')
-    }
-    catch(err)
-    {
-        console.log(err)
-    }
+        .then(()=>console.log('Comandos Escritos Exitosamente'))
+        .catch(console.error)
     
 } 

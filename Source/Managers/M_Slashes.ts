@@ -1,11 +1,12 @@
 import { readdirSync } from "fs";
 
 export default function (BOT:{[key: string]: any}, Discord:any)
-{
-    const SlashCommands = readdirSync('./Source/SlashCommands')
+{   
+    const route = './Compiled/SlashCommands'
+    const SlashCommands = readdirSync(route)
     for (const Folder of SlashCommands) 
     {
-        const File = readdirSync(`./Source/SlashCommands/${Folder}`)
+        const File = readdirSync(`${route}/${Folder}`)
             .filter(file=>file.endsWith('js'))
         for(const Module of File)
         {

@@ -40,7 +40,7 @@ from "fs"
         require('./slashes.js').default()
         //Escribe todos los comandos 
         
-        const Managers = readdirSync('./Source/Managers').filter(file => file.endsWith('.js'))
+        const Managers = readdirSync('./Compiled/Managers').filter(file => file.endsWith('.js'))
             for(const files of Managers)
             {   
                 try
