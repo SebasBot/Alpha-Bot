@@ -17,14 +17,14 @@ for(const Folder of CommandFiles)
     }
 }
 const Rest = new REST({version: '9'})
-    .setToken(process.env.BOT_TOKEN?process.env.BOT_TOKEN:'Error');
+    .setToken(process.env.BOT_TOKEN as string);
 
 export default async function () 
 {
     try
     {
         await Rest.put(
-            Routes.applicationCommands(process.env.CLIENTID?process.env.CLIENTID:'Error'),
+            Routes.applicationCommands(process.env.CLIENTID as string),
             {body: Commands}
         )
         console.log('Comandos Escritos Exitosamente')

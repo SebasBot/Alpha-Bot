@@ -1,4 +1,4 @@
-import { Message, TextBasedChannel, TextChannel } from "discord.js"
+import { Message, TextChannel } from "discord.js"
 
 export default async function (Discord:any, BOT:{[key:string]:any}, oldMsg:Message, newMsg:Message)
 {
@@ -22,7 +22,7 @@ export default async function (Discord:any, BOT:{[key:string]:any}, oldMsg:Messa
                             null,
         AutorID:          oldMsg.author.id,
         CanalID:          oldMsg.channel.id,
-        Fecha:            Date()
+        Fecha:            Date.now()
     }
     await BOT.Edits.set(MsgEdited.CanalID, MsgEdited)  
     console.log('-----------Mensaje Editado-----------')

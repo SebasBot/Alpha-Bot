@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, SlashCommandSubcommandBuilder } from '@discordjs/builders'
+import { SlashCommandBuilder } from '@discordjs/builders'
 import { Message } from 'discord.js'
 
 export default {
@@ -15,20 +15,13 @@ export default {
         var MsgId = Interaction.options.getString('id')
         var channel = Interaction.guild.channels.cache.get(Interaction.channel.id)
         var mensaje = channel.messages
-        
-        try {
-           await mensaje.fetch(MsgId)
+        await mensaje.fetch(MsgId)
             .then((msg:Message) =>{
                 if(!msg.stickers) return Interaction.reply(`No hay stickers en el mensaje ${MsgId}`)
                 Interaction.reply(`id: "${MsgId}" \n URL: ${msg.stickers.first()?.url}`)
             })
             .catch( (e:any) => { 
                 console.log(e)
-                Interaction.reply('Algo salio mal, No pude encontrar el mensaje')
             })
-        } catch (error) {
-            console.log(error)            
-        }
-        
     }
 }

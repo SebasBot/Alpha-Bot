@@ -8,7 +8,7 @@
     "install": "npm install fs dotenv discord.js discord-api-types @discordjs/rest @discordjs/builders; npm install --save-dev typescript @types/node",
     "config": "npm audit fix; npx tsc --init",
     "build": "tsc",
-    "start": "node -r dotenv/config ./Source/Index/start.js"
+    "start": "node -r dotenv/config ./Compiled/Index/start.js"
   },
   "author": "SebasBot",
   "license": "ISC",

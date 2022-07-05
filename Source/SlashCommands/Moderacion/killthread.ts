@@ -89,13 +89,7 @@ export default {
                                     Collector.stop()
                                 break;
                                 case 'deny':
-                                    collctd.editReply(
-                                        {
-                                            content:'Te recomiendo que no lo hagas de nuevo', 
-                                            embeds:[], 
-                                            components:[]
-                                        }
-                                    );
+                                    collctd.deleteReply().catch(console.error)
                                 break;
                             }
     

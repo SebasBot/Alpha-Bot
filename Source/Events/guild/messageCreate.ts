@@ -1,4 +1,4 @@
-import { Client, Message, TextChannel } from "discord.js";
+import { Client, DMChannel, Message, TextChannel } from "discord.js";
 
 export default function(Discord:any, BOT:Client, message:Message)
 {
@@ -16,7 +16,7 @@ export default function(Discord:any, BOT:Client, message:Message)
                     message.stickers.first()?.url:
                     null,
         AutorID:  message.author.id,
-        Fecha: Date(),
+        Fecha: Date.now(),
     }
     console.log('-----------Mensaje Enviado-----------')
     console.log(MsgCreated)

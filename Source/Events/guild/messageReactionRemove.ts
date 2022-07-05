@@ -11,7 +11,7 @@ export default async function (Discord:any, BOT:any, reaction:MessageReaction, u
 		channelId: reaction.message.channelId,
 		emoji: reaction.emoji,
 		messageURL: reaction.message.url,
-		createdAt: Date(),
+		createdAt: Date.now(),
 	};
     await BOT.Reaction.set(reactionRemoved.channelId, reactionRemoved)
    console.log('----------Reaccion Eliminada-----------')

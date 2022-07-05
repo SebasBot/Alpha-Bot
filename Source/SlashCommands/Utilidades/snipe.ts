@@ -67,10 +67,10 @@ export default {
         break;
         case 'reactioned':
             function formatEmoji(emoji:Emoji|GuildEmoji){
-                let rawEmoji = emoji.animated?'<a:':'<:'
+                let check = emoji.animated?'<a:':'<:'
                 return (emoji as GuildEmoji).available?
                     emoji.toString():
-                    `${rawEmoji + emoji.name + ':' + emoji.id + '>'}`
+                    `${[check,emoji.name,':',emoji.id,'>'].toString()}`
                 //Podria ser mejor, supongo
             }
 

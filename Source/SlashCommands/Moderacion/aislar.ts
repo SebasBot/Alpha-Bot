@@ -91,112 +91,93 @@ export default {
             Tiempo = null;
             Embed1.description = `Esto quitará el aislamiento a ${(usuario as User).username} ¿Desea continuar?`
         } 
-
-        try
-        {
-            await Interaction.reply(
-                {
+        await Interaction.reply
+        (
+            {
                     embeds: [Embed1],
                     components: [Botones]
-                }
-            )
-            .then(()=>
-                {
-                    const filter = (i:any) => i.user.id === Interaction.member?.user.id;
-                    const Collector = Interaction.channel?.createMessageComponentCollector(
-                        {
+            }
+        )
+        .then(()=>
+            {
+            const filter = (i:any) => i.user.id === Interaction.member?.user.id;
+            const Collector = Interaction.channel?.createMessageComponentCollector(
+                    {
                         filter, time: 15000
-                        }
-                    )
-                    
-                    Collector?.on('collect', async (collctd:ButtonInteraction) =>{
-                        try {
-                            await collctd.deferUpdate();
-                            switch(collctd.customId)
-                            {
-                                case "approve":
-                                    await Target?.timeout(
-                                        Tiempo? Tiempo*60*1000: Tiempo, 
-                                        Razon ||'Ningun motivo aparente'
-                                    )
-                                    .then( ()=>
-                                    {
-                                        if(Tiempo)
-                                        {
-                                            collctd.editReply( 
-                                                {
-                                                    content:'Ejecutando Castigo...', 
-                                                    embeds:[], 
-                                                    components:[]
-                                                }
-                                            )
-                                            Interaction.channel?.send(
-                                                {
-                                                    embeds:[Embed2]
-                                                }
-                                            )
-                                            
-                                        }
-                                        else
-                                        {
-                                            collctd.editReply(
-                                                {
-                                                    content:'Ejecutando Liberación...', 
-                                                    embeds:[], 
-                                                    components:[]
-                                                }
-                                            )
-                                            Interaction.channel?.send(
-                                                {
-                                                    content:`${usuario?.username} ha sido liberado de su castigo `
-                                                }
-                                            )
-                                            
-                                        }
-
-                                    })
-                                    .catch(()=>
-                                    {
-                                        collctd.editReply(
-                                            {
-                                                content:'Ha ocurrido un error, no se pudo aislar al usuario', 
-                                                embeds:[], 
-                                                components:[]
-                                            }
-                                        )
-                                        Interaction.channel?.send(
-                                            {
-                                                content:'Quizas no tengo permisos de Aislar a este usuario o ni exista... Quien sabe'
-                                            }
-                                        )
-                                        
-                                    });
-                                break;
-
-                                case "deny":
-                                    collctd.editReply(
-                                        {
-                                            content:'Te recomiendo que utilices esto bien :/', 
-                                            embeds:[], 
-                                            components:[]
-                                        }
-                                    );
-                                break;
-                            }
-                        } 
-                        catch (error) 
+                    }
+            ) 
+            Collector?.on('collect', async (collctd:ButtonInteraction) =>{
+                await collctd.deferUpdate().catch(console.error);
+                switch(collctd.customId)
+                    {
+                    case "approve":
+                        await Target?.timeout(
+                            Tiempo? Tiempo*60*1000: Tiempo, 
+                            Razon ||'Ningun motivo aparente'
+                        )
+                        .then( ()=>
                         {
-                            console.log(error)                       
-                        }
-                    
-                    })
-                
-                }
-            )
-        }
-        catch(error)
-        {
-            console.log(error)
-        }
+                            if(Tiempo)
+                            {
+                                collctd.editReply( 
+                                    {
+                                        content:'Ejecutando Castigo...', 
+                                        embeds:[], 
+                                        components:[]
+                                    }
+                                )
+                                Interaction.channel?.send(
+                                    {
+                                        embeds:[Embed2]
+                                    }
+                                )                
+                            }
+                            else
+                            {
+                                collctd.editReply(
+                                    {
+                                        content:'Ejecutando Liberación...', 
+                                        embeds:[], 
+                                        components:[]
+                                    }
+                                )
+                                Interaction.channel?.send(
+                                    {
+                                        content:`${usuario?.username} ha sido liberado de su castigo `
+                                    }
+                                )
+                                            
+                            }
+                        })
+                        .catch(()=>
+                            {
+                                collctd.editReply(
+                                    {
+                                        content:'Ha ocurrido un error, no se pudo aislar al usuario', 
+                                        embeds:[], 
+                                        components:[]
+                                    }
+                                )
+                                Interaction.channel?.send(
+                                    {
+                                        content:'Quizas no tengo permisos de Aislar a este usuario o ni exista... Quien sabe'
+                                    }
+                                )    
+                            });
+                            break;
+                            case "deny":
+                                collctd.editReply(
+                                    {
+                                        content:'Te recomiendo que utilices esto bien :/', 
+                                        embeds:[], 
+                                        components:[]
+                                    }
+                                );
+                            break;
+                    }        
+            })
+            }
+        )
+        .catch(console.error)
     }
 }
